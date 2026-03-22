@@ -1,0 +1,198 @@
+import { Helmet } from "react-helmet-async";
+import { Link } from "react-router-dom";
+import { PawPrint, Search, Calendar, MapPin, Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+const Index = () => {
+  return (
+    <>
+      <Helmet>
+        <title>Pet Square - Coming Soon | Your Complete Pet Community</title>
+        <meta
+          name="description"
+          content="Pet Square is launching soon in Singapore. Sign up for early access to discover trusted pet services, events, and a community of pet lovers."
+        />
+      </Helmet>
+
+      <div className="min-h-screen flex flex-col bg-background">
+        {/* Minimal Header */}
+        <header className="py-6 border-b border-border/50">
+          <div className="flex justify-center">
+            <Link to="/" className="flex items-center gap-2.5 group">
+              <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center group-hover:scale-105 transition-transform">
+                <PawPrint className="w-5 h-5 text-primary-foreground" />
+              </div>
+              <span className="text-xl font-semibold text-foreground tracking-tight">Pet Square</span>
+            </Link>
+          </div>
+        </header>
+
+        <main className="flex-1">
+          {/* Hero — Coming Soon */}
+          <section className="py-20 md:py-32 lg:py-40 gradient-hero">
+            <div className="section-container text-center max-w-3xl mx-auto px-4">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary text-sm font-medium mb-8 animate-fade-in">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                Coming Soon to Singapore
+              </div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-foreground leading-[1.15] mb-6 animate-fade-in-up tracking-tight">
+                Find the best care,{" "}
+                <span className="italic font-semibold text-primary">love your pet more.</span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-muted-foreground max-w-xl mx-auto mb-10 animate-fade-in-up leading-relaxed" style={{ animationDelay: "0.1s" }}>
+                We're building the go-to platform for pet owners and service providers in Singapore. Sign up below to get early access.
+              </p>
+            </div>
+          </section>
+
+          {/* What We're Building */}
+          <section className="py-20 md:py-28">
+            <div className="section-container text-center">
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4">What We're Building</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">Everything your pet needs</h2>
+              <p className="text-muted-foreground max-w-md mx-auto mb-16">
+                A sneak peek at what's coming — one platform connecting pet owners with the best local services.
+              </p>
+
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+                {[
+                  { icon: Search, label: "Find Services", desc: "Sitters, groomers & more" },
+                  { icon: Calendar, label: "Pet Events", desc: "Local meetups & workshops" },
+                  { icon: MapPin, label: "Pet Places", desc: "Parks, cafés & shelters" },
+                  { icon: Heart, label: "Lost & Found", desc: "Reunite lost pets" },
+                ].map((item) => (
+                  <div key={item.label} className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-card border border-border/50 card-elevated">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                      <item.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <p className="font-semibold text-foreground text-sm">{item.label}</p>
+                    <p className="text-xs text-muted-foreground">{item.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Two Column Value Props */}
+          <section className="py-16 md:py-24">
+            <div className="section-container">
+              <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                {/* For Pet Owners */}
+                <div className="rounded-2xl border border-border bg-card p-8 md:p-10">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-primary/10 text-primary mb-6">
+                    For Pet Owners
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-1">
+                    Care for your pet
+                  </h3>
+                  <p className="text-2xl md:text-3xl font-semibold italic text-primary mb-6">
+                    stress-free.
+                  </p>
+                  <p className="text-muted-foreground mb-8 leading-relaxed">
+                    Whether it's grooming, sitting, or a vet visit — Pet Square brings everything you need into one simple platform.
+                  </p>
+                  <ul className="space-y-4">
+                    {[
+                      "Discover and compare trusted providers in minutes",
+                      "Book services with confidence and secure payments",
+                      "Join local pet events and community meetups",
+                      "Help reunite lost pets in your neighbourhood",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-sm text-foreground">
+                        <span className="w-2 h-2 rounded-full bg-primary mt-1.5 shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* For Service Providers */}
+                <div className="rounded-2xl bg-foreground text-background p-8 md:p-10">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase bg-background/15 text-background mb-6">
+                    For Service Providers
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-1">
+                    Grow your
+                  </h3>
+                  <p className="text-2xl md:text-3xl font-semibold italic text-primary mb-6">
+                    business with us.
+                  </p>
+                  <p className="text-background/70 mb-8 leading-relaxed">
+                    Join a curated marketplace of pet service providers and reach thousands of pet owners actively looking for services like yours.
+                  </p>
+                  <ul className="space-y-4">
+                    {[
+                      "Get discovered by pet owners searching near you",
+                      "Receive qualified leads — no more cold outreach",
+                      "Get paid safely and securely, every time",
+                      "Build your reputation with verified reviews",
+                    ].map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-sm text-background/90">
+                        <span className="w-2 h-2 rounded-full bg-primary mt-1.5 shrink-0" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Early Access Signup — Tally Form */}
+          <section className="py-20 md:py-28 bg-secondary/30">
+            <div className="section-container text-center max-w-2xl mx-auto">
+              <p className="text-xs font-semibold tracking-[0.2em] uppercase text-primary mb-4">Early Access</p>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                Be the first to know when we launch
+              </h2>
+              <p className="text-muted-foreground mb-10 leading-relaxed">
+                Sign up for early access and exclusive updates. We're launching soon in Singapore!
+              </p>
+              <div className="rounded-2xl border border-border bg-card p-8 md:p-12">
+                {/* Replace the src below with your actual Tally.so embed URL */}
+                <iframe
+                  data-tally-src="https://tally.so/embed/REPLACE_WITH_YOUR_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1"
+                  loading="lazy"
+                  width="100%"
+                  height="300"
+                  frameBorder={0}
+                  title="Early Access Signup"
+                  className="rounded-xl"
+                />
+                <p className="text-xs text-muted-foreground mt-4">
+                  Replace the iframe src with your Tally.so form embed URL.
+                </p>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        {/* Minimal Footer */}
+        <footer className="py-8 border-t border-border/50">
+          <div className="section-container">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                  <PawPrint className="w-4 h-4 text-primary-foreground" />
+                </div>
+                <span className="text-sm font-medium text-foreground">Pet Square</span>
+              </div>
+              <nav className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground">
+                <Link to="/about" className="hover:text-primary transition-colors">About</Link>
+                <Link to="/contact" className="hover:text-primary transition-colors">Contact</Link>
+                <Link to="/trust" className="hover:text-primary transition-colors">Trust & Safety</Link>
+                <Link to="/privacy" className="hover:text-primary transition-colors">Privacy</Link>
+                <Link to="/terms" className="hover:text-primary transition-colors">Terms</Link>
+              </nav>
+              <p className="text-xs text-muted-foreground">© {new Date().getFullYear()} Pet Square</p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </>
+  );
+};
+
+export default Index;
