@@ -223,8 +223,8 @@
       border: 1px solid var(--border);
     }
 
-    .value-card.light { background: var(--card); }
-    .value-card.dark { background: #EDD9C8; color: var(--foreground); }
+    .value-card.light { background: #FFF5EE; color: #2D1F17; }
+    .value-card.dark { background: #E8612A; color: #FFFFFF; }
 
     .value-tag {
       display: inline-block;
@@ -243,8 +243,8 @@
     }
 
     .value-card.dark .value-tag {
-      background: rgba(232,98,42,0.15);
-      color: var(--primary);
+      background: rgba(255,255,255,0.2);
+      color: #fff;
     }
 
     .value-card h3 {
@@ -266,8 +266,8 @@
       font-size: 0.95rem;
     }
 
-    .value-card.light p { color: var(--muted); }
-    .value-card.dark p { color: var(--muted); }
+    .value-card.light p { color: #5C4033; }
+    .value-card.dark p { color: rgba(255,255,255,0.85); }
 
     .value-list {
       list-style: none;
@@ -284,7 +284,10 @@
       line-height: 1.5;
     }
 
-    .value-card.dark .value-list li { color: var(--foreground); }
+    .value-card.dark .value-list li { color: #fff; }
+    .value-card.dark h3 { color: #fff; }
+    .value-card.dark h3 em { color: #FFD4B8; }
+    .value-card.dark .dot { background: #FFD4B8; }
 
     .dot {
       width: 8px; height: 8px;
@@ -497,7 +500,7 @@
             src="https://tally.so/embed/RGLp1P?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
             loading="lazy"
             width="100%"
-            height="300"
+            height="600"
             frameborder="0"
             title="Early Access Signup"
           ></iframe>
